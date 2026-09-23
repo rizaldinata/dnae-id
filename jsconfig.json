@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/domain/*": ["./src/domain/*"],
+      "@/data/*": ["./src/data/*"],
+      "@/presentation/*": ["./src/presentation/*"]
+    }
+  }
+}

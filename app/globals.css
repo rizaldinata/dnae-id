@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-crimson-800 text-gray-100 font-sans antialiased selection:bg-white selection:text-crimson-900;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  .bg-buku-kotak {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.4) 1.5px, transparent 1.5px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 1.5px, transparent 1.5px);
+    background-size: 56px 56px;
+  }
+  .glass-nav {
+    @apply bg-crimson-900/85 backdrop-blur-xl border-b border-white/10;
+  }
+  .glass-card {
+    @apply bg-crimson-900/60 backdrop-blur-md border border-crimson-700/50 rounded-2xl transition-all duration-300 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.1)] hover:-translate-y-1;
+  }
+  .glass-modal {
+    @apply bg-crimson-900/95 backdrop-blur-2xl border border-crimson-700/40 rounded-3xl shadow-2xl;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-red-100 to-crimson-200;
+  }
+  .text-gradient-crimson {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-crimson-200 via-white to-crimson-300;
+  }
+  .font-display {
+    font-family: 'DM Serif Display', serif;
+  }
+  .font-poster {
+    font-family: 'Lilita One', cursive;
+  }
+}
+
+/* Float animation for product image */
+@keyframes floatProduct {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-18px) rotate(1deg); }
+}
+.animate-float-product {
+  animation: floatProduct 4s ease-in-out infinite;
+}
+
+/* Sparkle pulse */
+@keyframes sparklePulse {
+  0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  50% { opacity: 0.5; transform: scale(1.3) rotate(180deg); }
+}
+.animate-sparkle {
+  animation: sparklePulse 2s ease-in-out infinite;
+}
+
+/* Text shimmer */
+@keyframes textShimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.text-shimmer {
+  background: linear-gradient(90deg, #fff 20%, #ffd6d6 40%, #fff 60%, #ffd6d6 80%, #fff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s linear infinite;
+}
+
+/* Butterfly float */
+@keyframes butterflyFloat {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, -10px) rotate(5deg); }
+  50% { transform: translate(-3px, -18px) rotate(-3deg); }
+  75% { transform: translate(4px, -8px) rotate(4deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+.animate-butterfly {
+  animation: butterflyFloat 5s ease-in-out infinite;
+}
+
+/* Glow pulse */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(255,255,255,0.15), 0 20px 60px rgba(0,0,0,0.4); }
+  50% { box-shadow: 0 0 60px rgba(255,255,255,0.25), 0 20px 80px rgba(0,0,0,0.5); }
+}
+.animate-glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Badge pulse */
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1) rotate(-3deg); }
+  50% { transform: scale(1.06) rotate(-3deg); }
+}
+.animate-badge {
+  animation: badgePulse 2.5s ease-in-out infinite;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none;
+}
+
+/* ===== ADMIN DASHBOARD - Minimal Dark Theme ===== */
+.admin-body {
+  background-color: #111111;
+}
+
+.admin-card {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.5rem;
+  transition: border-color 0.15s;
+}
+.admin-card:hover {
+  border-color: #3a3a3a;
+}
+
+.admin-input {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.5rem;
+  color: #e5e5e5;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.admin-input:focus {
+  border-color: #555;
+}
+
+.admin-btn {
+  background-color: #2a2a2a;
+  color: #e5e5e5;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #3a3a3a;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.admin-btn:hover {
+  background-color: #333;
+  border-color: #4a4a4a;
+}
+
+.admin-btn-primary {
+  background-color: #e5e5e5;
+  color: #111;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.admin-btn-primary:hover {
+  background-color: #fff;
+}
